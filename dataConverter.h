@@ -15,11 +15,11 @@ class dataConverter
 {
 public:
     dataConverter(string fileName);
-    std::unordered_map<string, float> getTimeMap();
-
+    std::unordered_map<string, int> getTimeMap();
+    std::vector<std::pair<float,string>> getWeatherVec();
 private:
-    std::unordered_map<string, float> timeLookup;
-    std::vector<int> weatherVec;
+    std::unordered_map<string, int> timeLookup;
+    std::vector<std::pair<float,string>> weatherVec;
 
 };
 
