@@ -8,7 +8,7 @@ int main()
 {
     // gives weather json file name to convert it into a map
     dataConverter obj("weather.json");
-
+    //
     //gets the map representation of it, time (string type) is the key and  (float) is the corresponding position in the vector
     std::unordered_map<string,int> weatherMap = obj.getTimeMap();
 
