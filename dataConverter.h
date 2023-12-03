@@ -1,7 +1,3 @@
-//
-// Created by highf on 11/26/2023.
-//
-
 #ifndef UNTITLED3_DATACONVERTER_H
 #define UNTITLED3_DATACONVERTER_H
 #include "json.hpp"

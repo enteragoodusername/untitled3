@@ -2,6 +2,8 @@
 #include <fstream>
 #include "dataConverter.h"
 #include <vector>
+#include "functions.h"
+#include "CommandHandler.h"
 
 
 int main()
@@ -14,9 +16,8 @@ int main()
     // vector with temp and time string
     std::vector<std::pair<float,string>> weatherVec = obj.getWeatherVec();
 
-    for (auto& pair :weatherVec){
-        std::cout << pair.first << " : " << pair.second << std::endl;
-    }
 
+    auto vec = Functions::getLongestStreak(weatherVec, 0, 20);
+    std::cout << "Longest streak is from " << vec.front().second << " to " << vec.back().second << std::endl;
     return 0;
 }

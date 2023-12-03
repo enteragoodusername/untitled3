@@ -1,6 +1,4 @@
-//
-// Created by highf on 11/26/2023.
-//
+
 #include <fstream>
 #include "dataConverter.h"
 #include <iostream>
