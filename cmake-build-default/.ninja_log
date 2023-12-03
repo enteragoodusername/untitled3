@@ -1,11 +1,7 @@
 # ninja log v5
-962	1662	7232499323823934	untitled3.exe	727c89838d886d82
-0	192	7232657666986400	build.ninja	174f8ee80f4f56f5
-3	962	7232499316898599	CMakeFiles/untitled3.dir/main.cpp.obj	2587e29ebca70a28
-9	2174	7232398463190358	CMakeFiles/untitled3.dir/dataConverter.cpp.obj	1dacfefea0ee7afb
-7	356	7232497581148995	CMakeFiles/untitled3.dir/functions.cpp.obj	2a639be400a1971e
-18	492	7232776834733561	CMakeFiles/untitled3.dir/functions.cpp.obj	2a639be400a1971e
-5	1738	7232776847208297	CMakeFiles/untitled3.dir/main.cpp.obj	2587e29ebca70a28
+666	1975	7232850523238754	untitled3.exe	a394e9c567b79980
+0	192	7232852255111804	build.ninja	174f8ee80f4f56f5
 24	2823	7232776857996923	CMakeFiles/untitled3.dir/CommandHandler.cpp.obj	dfe754715f226c40
+5	1427	7232849422449514	CMakeFiles/untitled3.dir/main.cpp.obj	2587e29ebca70a28
 13	2927	7232776859066352	CMakeFiles/untitled3.dir/dataConverter.cpp.obj	1dacfefea0ee7afb
-2927	4374	7232776873490697	untitled3.exe	a394e9c567b79980
+3	666	7232850510221439	CMakeFiles/untitled3.dir/functions.cpp.obj	2a639be400a1971e

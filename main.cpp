@@ -16,7 +16,10 @@ int main()
     // vector with temp and time string
     std::vector<std::pair<float,string>> weatherVec = obj.getWeatherVec();
 
-
+    auto data= Functions::bucketSort(weatherMap, weatherVec);
+    for (auto pair : data){
+        std::cout << pair.first << std::endl;
+    }
     auto vec = Functions::getLongestStreak(weatherVec, 0, 20);
     std::cout << "Longest streak is from " << vec.front().second << " to " << vec.back().second << std::endl;
     return 0;
