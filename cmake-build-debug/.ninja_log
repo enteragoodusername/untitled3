@@ -1,0 +1,18 @@
+# ninja log v5
+14	1579	7232852325418817	CMakeFiles/untitled3.dir/functions.cpp.obj	877896e643d4e241
+1	2304	7232852333192920	CMakeFiles/untitled3.dir/main.cpp.obj	a80ff219319f08ab
+28	3665	7232852346719461	CMakeFiles/untitled3.dir/CommandHandler.cpp.obj	fd75f8d4fa5a5018
+8	3803	7232852348129817	CMakeFiles/untitled3.dir/dataConverter.cpp.obj	c32fcfb93e5e92e5
+3803	5568	7232852365740816	untitled3.exe	a3956150fc8edcda
+8	1057	7232856399245952	CMakeFiles/untitled3.dir/functions.cpp.obj	877896e643d4e241
+3	1607	7232856404756418	CMakeFiles/untitled3.dir/main.cpp.obj	a80ff219319f08ab
+1607	3733	7232856425920596	untitled3.exe	a3956150fc8edcda
+3	1708	7232858161090531	CMakeFiles/untitled3.dir/main.cpp.obj	a80ff219319f08ab
+7	3011	7232858174063656	CMakeFiles/untitled3.dir/dataConverter.cpp.obj	c32fcfb93e5e92e5
+3012	4816	7232858192059185	untitled3.exe	a3956150fc8edcda
+3	2375	7232858312010954	CMakeFiles/untitled3.dir/dataConverter.cpp.obj	c32fcfb93e5e92e5
+2375	4195	7232858330172202	untitled3.exe	a3956150fc8edcda
+4	1262	7232858464682603	CMakeFiles/untitled3.dir/main.cpp.obj	a80ff219319f08ab
+1262	3020	7232858482163224	untitled3.exe	a3956150fc8edcda
+3	1527	7232859189462011	CMakeFiles/untitled3.dir/main.cpp.obj	a80ff219319f08ab
+1528	3727	7232859211369854	untitled3.exe	a3956150fc8edcda

@@ -14,8 +14,10 @@ dataConverter::dataConverter(string fileName)
     int counter  = 0;
     for (auto timeIter = timeData.begin(); timeIter < timeData.end(); timeIter++)
     {
-        timeLookup[timeIter->dump()] = counter;
-        weatherVec.push_back( std::make_pair(std::stof(tempIter->dump()),timeIter->dump()));
+        std::string date = timeIter->dump();
+        date = date.substr(1,date.size()-2);
+        timeLookup[date] = counter;
+        weatherVec.push_back( std::make_pair(std::stof(tempIter->dump()),date));
         counter++;
         tempIter++;
     }
