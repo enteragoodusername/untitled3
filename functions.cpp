@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <string>
 #include <chrono>
-std::vector<std::pair<float,std::string>> Functions::getLongestStreak(const std::vector<std::pair<float,std::string>>& weatherVec, int low, int high){
+std::vector<std::pair<float,std::string>> Functions::getLongestStreak(const std::vector<std::pair<float,std::string>>& weatherVec, float low, float high){
     int longestIndex = -1;
     int longestChain = 0;
     int currentIndex = -1;
@@ -111,7 +111,7 @@ std::vector<std::pair<float, std::string>> Functions::monthlyAverage(const std::
     std::vector<std::pair<float, std::string>> averages;
 
     std::string monthStr = sortWeatherMap.front().second.substr(5,2);
-    std::string yearStr = sortWeatherMap.front().second.substr(0,4);
+    std::string restStr = sortWeatherMap.front().second.substr(0,4);
     
 
     int counter = 0;
@@ -123,9 +123,9 @@ std::vector<std::pair<float, std::string>> Functions::monthlyAverage(const std::
            counter++;
        }
        else{
-           averages.push_back(std::make_pair(monthSum/counter,yearStr +"-"+monthStr));
+           averages.push_back(std::make_pair(monthSum/counter,restStr +"-"+monthStr));
            monthStr = iter->second.substr(5,2);
-           yearStr = iter->second.substr(0,4);
+           restStr = iter->second.substr(0,4);
            counter = 0;
            monthSum = 0;
        }
@@ -135,13 +135,64 @@ std::vector<std::pair<float, std::string>> Functions::monthlyAverage(const std::
 
 }
 
-std::pair<float, std::string> Functions::hottestMonth (std::vector<std::pair<float, std::string>> weatherVec){
-    auto averages = monthlyAverage(weatherVec);
-    return hottest(averages);
+std::vector<std::pair<float, std::string>> Functions::dailyAverage(const std::vector<std::pair<float, std::string>>& sortWeatherMap) {
+
+    std::vector<std::pair<float, std::string>> averages;
+
+    std::string dayStr = sortWeatherMap.front().second.substr(8,2);
+    std::string restStr = sortWeatherMap.front().second.substr(0,7);
+
+
+    int counter = 0;
+    float monthSum = 0;
+
+    for(auto iter = sortWeatherMap.begin(); iter != sortWeatherMap.end(); iter++){
+        if (iter->second.substr(8,2) == dayStr){
+            monthSum += iter->first;
+            counter++;
+        }
+        else{
+            averages.push_back(std::make_pair(monthSum/counter,restStr +"-"+dayStr));
+            dayStr = iter->second.substr(8,2);
+            restStr = iter->second.substr(0,7);
+            counter = 0;
+            monthSum = 0;
+        }
+    };
+
+    return averages;
+
 }
-std::pair<float, std::string> Functions::coldestMonth (std::vector<std::pair<float, std::string>> weatherVec){
-    return coldest(monthlyAverage(weatherVec));
+
+std::vector<std::pair<float, std::string>> Functions::yearlyAverage(const std::vector<std::pair<float, std::string>>& sortWeatherMap) {
+
+    std::vector<std::pair<float, std::string>> averages;
+
+
+    std::string yearStr = sortWeatherMap.front().second.substr(0,4);
+
+
+    int counter = 0;
+    float monthSum = 0;
+
+    for(auto iter = sortWeatherMap.begin(); iter != sortWeatherMap.end(); iter++){
+        if (iter->second.substr(0,4) == yearStr){
+            monthSum += iter->first;
+            counter++;
+        }
+        else{
+            averages.push_back(std::make_pair(monthSum/counter,yearStr));
+            yearStr = iter->second.substr(0,4);
+            counter = 0;
+            monthSum = 0;
+        }
+    };
+
+    return averages;
+
 }
+
+
 
 std::pair<float, std::string> Functions::coldest(std::vector<std::pair<float, std::string>> weatherVec){
     std::vector<std::pair<float, std::string>> averages = monthlyAverage(weatherVec);
