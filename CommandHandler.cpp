@@ -26,7 +26,7 @@ std::string scope = "hourly";
              getline(cin,input);
              input += "T00:00";\
              int start = dateLookup[input];
-             cout << start << std::endl;
+
              std::cout << "Input end date in yyyy-mm-dd format:" << std::endl;
              input = "";
              getline(cin,input);
@@ -61,6 +61,7 @@ std::string scope = "hourly";
                  scope = "Yearly";
                  currentWeatherVec = Functions::yearlyAverage(currentWeatherVec);
              }
+             cout << "Scope and time period changed" << std::endl;
 
 
          }
@@ -112,9 +113,15 @@ std::string scope = "hourly";
 
 
              std::vector<std::pair<float,std::string>> streak = Functions::getLongestStreak(currentWeatherVec, stof(input1),stof(input2));
-
-             cout << "Longest streak from " << streak.front().second << " to " << streak.back().second << std::endl;
-             cout << "Total length in datapoints " << streak.size() << std::endl;
+             if (streak.size() == 0)
+             {
+                 cout << "No datapoints fit the criteria" << std::endl;
+             }
+             else{
+                     cout << "Longest streak from " << streak.front().second << " to " << streak.back().second
+                          << std::endl;
+                     cout << "Total length in datapoints " << streak.size() << std::endl;
+                 }
 
 
          }
